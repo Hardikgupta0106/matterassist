@@ -1,0 +1,22 @@
+services:
+  mongo:
+    image: mongo:7
+    volumes: [mongo_data:/data/db]
+  ai-service:
+    build: ./ai-service
+    env_file: .env
+    environment: [CHROMA_DIR=/data/chroma]
+    volumes: [chroma_data:/data/chroma]
+  server:
+    build: ./server
+    environment:
+      - MONGO_URL=mongodb://mongo:27017/matterassist
+      - AI_URL=http://ai-service:8000
+    depends_on: [mongo, ai-service]
+  client:
+    build: ./client
+    ports: ["3000:80"]
+    depends_on: [server]
+volumes:
+  mongo_data:
+  chroma_data:

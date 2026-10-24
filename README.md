@@ -7,9 +7,10 @@ A chatbot that answers questions from your documents. It searches a pre-loaded d
 ![Upload and sources](docs/screenshots/upload.png)
 ![Containers running](docs/screenshots/docker.png)
 
-**Live demo:** <https://matterassist.onrender.com>
-**Docker image:** `docker pull thehardikgupta>/matterassist-client` (see "Run with Docker")
 
+**Live demo:** https://matterassist.onrender.com
+
+> Hosted on a free tier: the first load after inactivity can take about a minute, and uploads and chat history reset when the service restarts.
 ## Features
 - Chat UI with session history (persists across page refresh)
 - Upload PDF, TXT, DOCX or MD files
@@ -61,16 +62,6 @@ docker compose up --build
 ```
 Open http://localhost:3000
 
-### Run without Docker (development)
-```bash
-# terminal 1: server
-cd server && npm install && npm run dev
-# terminal 2: ai-service
-cd ai-service && pip install -r requirements.txt && python main.py
-# terminal 3: client
-cd client && npm install && npm run dev
-```
-Open http://localhost:5173
 
 ## How to test
 1. Open the app and ask: `How many paid leaves?` The answer should come from the pre-loaded policy documents and show a source.

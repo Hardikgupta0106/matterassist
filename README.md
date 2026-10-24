@@ -7,7 +7,7 @@ A chatbot that answers questions from your documents. It searches a pre-loaded d
 ![Upload and sources](docs/screenshots/upload.png)
 ![Containers running](docs/screenshots/docker.png)
 
-**Live demo:** <PASTE_LIVE_URL>
+**Live demo:** <https://matterassist.onrender.com>
 **Docker image:** `docker pull thehardikgupta>/matterassist-client` (see "Run with Docker")
 
 ## Features
